@@ -1,9 +1,11 @@
 # MCDR_Restart-Server
 MCDR插件，用于快速重启服务器
 
-使用命令 !!restart 以重启服务器
+使用命令!!restart以重启服务器
 
 重启倒计时过程使用!!unrestart取消重启
+
+使用指令!!reload重新加载
 
 由Fallen_Breath的SimpleOP插件修改而来，链接：https://github.com/MCDReforged/SimpleOP
 
