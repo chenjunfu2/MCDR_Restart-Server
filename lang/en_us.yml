@@ -1,0 +1,4 @@
+restart_server.permission.need_permission: 'Insufficient authority'
+restart_server.help.restart: 'Restart the server with {0} seconds delay'
+restart_server.restart.spam: 'Already restarting'
+restart_server.restart.countdown: 'Restart the server in {0}s!'

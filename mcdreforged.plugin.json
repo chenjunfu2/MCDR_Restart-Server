@@ -1,0 +1,19 @@
+{
+	"id": "restart_server",
+	"version": "1.2.0",
+	"name": "Restart server",
+	"description": {
+		"en_us": "!!restart to restart the server",
+		"zh_cn": "!!restart 以重启服务器"
+	},
+	"author": [
+		"由Fallen_Breath的SimpleOP插件修改而来"
+	],
+	"dependencies": {
+		"mcdreforged": ">=2.1.0-beta"
+	},
+	"link": "https://github.com/MCDReforged/SimpleOP",
+	"resources": [
+		"lang"
+	]
+}
