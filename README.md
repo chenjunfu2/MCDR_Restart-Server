@@ -9,7 +9,7 @@ MCDR插件，用于快速重启服务器
 
 由Fallen_Breath的SimpleOP插件修改而来，链接：https://github.com/MCDReforged/SimpleOP
 
-去掉了!!op指令，并新增了对!!restart指令的权限等级检查
+去掉了!!op指令，并新增了对!!restart !!unrestart !!reload指令的权限等级检查
 
 指令默认权限等级为3，可以在配置文件中修改权限等级
 
