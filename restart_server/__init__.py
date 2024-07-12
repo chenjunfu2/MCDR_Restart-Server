@@ -61,6 +61,15 @@ def restart(source: CommandSource):
 		unrestart_event.clear()
 		restart_event.clear()
 
+@new_thread(PLUGIN_METADATA.name + ' - reload')
+def reload(source: CommandSource):
+	if not source.has_permission(config.permission):
+		source.reply(RText(tr('permission.need_permission'), color=RColor.red))
+		return
+
+	source.get_server().execute('reload')
+	source.reply(RText(tr('reload.info'), color=RColor.green))
+
 
 def on_load(server: PluginServerInterface, prev):
 	try:
@@ -81,6 +90,8 @@ def on_load(server: PluginServerInterface, prev):
 
 	server.register_help_message('!!restart', tr('help.restart', config.restart_delay))
 	server.register_help_message('!!unrestart', tr('help.unrestart'))
+	server.register_help_message('!!reload', tr('help.reload'))
 
 	server.register_command(Literal('!!restart').runs(restart))
 	server.register_command(Literal('!!unrestart').runs(unrestart))
+	server.register_command(Literal('!!reload').runs(reload))

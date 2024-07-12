@@ -1,10 +1,10 @@
 {
 	"id": "restart_server",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"name": "Restart server",
 	"description": {
-		"en_us": "!!restart to restart the server\n!!unrestart to Unrestart the server",
-		"zh_cn": "!!restart 以重启服务器\n!!unrestart 以取消重启服务器"
+		"en_us": "!!restart to restart the server\n!!unrestart to unrestart the server\n!!reload to reload",
+		"zh_cn": "!!restart 以重启服务器\n!!unrestart 以取消重启服务器\n!!reload 以重新加载"
 	},
 	"author": [
 		"Chenjunfu2a\n由Fallen_Breath的SimpleOP插件修改而来"
