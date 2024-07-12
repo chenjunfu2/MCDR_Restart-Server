@@ -1,4 +1,7 @@
 restart_server.permission.need_permission: '权限不足'
 restart_server.help.restart: '重启服务器，延迟{0}秒'
+restart_server.help.unrestart: '取消重启服务器'
 restart_server.restart.spam: '已经在重启了'
+restart_server.restart.no: '服务器没有在重启'
+restart_server.restart.cancel: '服务器重启已取消！'
 restart_server.restart.countdown: '{0}秒后重启服务器！'
