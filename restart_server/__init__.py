@@ -15,7 +15,6 @@ unrestart_event = Event()
 killrst_event = Event()
 event_lock = Lock()
 config = Config.get_default()
-g_server = None
 
 
 def tr(translation_key: str, *args, **kwargs) -> RTextMCDRTranslation:
@@ -71,7 +70,7 @@ def restart(source: CommandSource):
 
 		is_restart = source.get_server().restart()
 		if not is_restart:
-			g_server.reply(RText(tr('restart.fail')))
+			source.get_server().logger.error(tr('restart.fail'))
 			source.reply(RText(tr('restart.fail')))
 	finally:
 		unset_event()
@@ -90,7 +89,7 @@ def killrst(source: CommandSource):
 		if is_kill:
 			killrst_event.set()#设置事件，等待服务端停止
 		else:
-			g_server.reply(RText(tr('killrst.fail')))
+			source.get_server().logger.error(tr('killrst.fail'))
 			source.reply(RText(tr('killrst.fail')))
 	finally:
 		unset_event()
@@ -108,17 +107,17 @@ def fastrst(source: CommandSource):
 	try:
 		is_restart = source.get_server().restart()
 		if not is_restart:
-			g_server.reply(RText(tr('restart.fail')))
+			source.get_server().logger.error(tr('restart.fail'))
 			source.reply(RText(tr('restart.fail')))
 	finally:
 		unset_event()
 	
 
 def on_server_stop(server: PluginServerInterface, server_return_code: int):
-	if killrst_event.is_set():#如果设置了事件，则重启，然后清除
+	if killrst_event.is_set():  # 如果设置了事件，则重启，然后清除
 		is_start = server.start()
 		if not is_start:
-			g_server.reply(RText(tr('restart.fail')))
+			server.logger.error(tr('restart.fail'))
 		killrst_event.clear()
 	
 
@@ -137,7 +136,6 @@ def on_load(server: PluginServerInterface, prev):
 		global killrst_event
 		global unrestart_event
 		global event_lock
-		
 
 		assert type(prev.restart_event) is type(restart_event)
 		assert type(prev.killrst_event) is type(killrst_event)
@@ -167,10 +165,5 @@ def on_load(server: PluginServerInterface, prev):
 	server.register_command(Literal('!!unrestart').runs(unrestart))
 	server.register_command(Literal('!!reload').runs(reload))
 	
-	global g_server
-	g_server = server#保存服务端
-
 def on_unload(server: PluginServerInterface):
-	global g_server
-	g_server = None#清除服务端
-	
+	unset_event()

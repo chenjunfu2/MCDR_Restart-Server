@@ -1,6 +1,6 @@
 {
 	"id": "restart_server",
-	"version": "1.2.3",
+	"version": "1.2.4",
 	"name": "Restart server",
 	"description": {
 		"en_us": "!!restart to restart the server\n!!unrestart to unrestart the server\n!!reload to reload\n!!killrst to kill and restart\n!!fastrst to restart server just now",
