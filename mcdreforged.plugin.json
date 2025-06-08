@@ -1,18 +1,18 @@
 {
 	"id": "restart_server",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"name": "Restart server",
 	"description": {
-		"en_us": "!!restart to restart the server\n!!unrestart to unrestart the server\n!!reload to reload",
-		"zh_cn": "!!restart 以重启服务器\n!!unrestart 以取消重启服务器\n!!reload 以重新加载"
+		"en_us": "!!restart to restart the server\n!!unrestart to unrestart the server\n!!reload to reload\n!!killrst to kill and restart\n!!fastrst to restart server just now",
+		"zh_cn": "!!restart 以重启服务器\n!!unrestart 以取消重启服务器\n!!reload 以重新加载\n!!killrst 杀掉服务端并重启\n!!fastrst 立刻重启服务器"
 	},
 	"author": [
-		"Chenjunfu2a\n由Fallen_Breath的SimpleOP插件修改而来"
+		"chenjunfu2"
 	],
 	"dependencies": {
 		"mcdreforged": ">=2.1.0-beta"
 	},
-	"link": "https://github.com/MCDReforged/SimpleOP",
+	"link": "https://github.com/chenjunfu2/mcdr_restart_server",
 	"resources": [
 		"lang"
 	]
